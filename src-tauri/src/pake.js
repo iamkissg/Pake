@@ -31,6 +31,11 @@ const ctrlKeyShortcuts = {
   0: () => zoomCommon(() => "100%"),
 };
 
+// 拦截新标签页
+window.open = function(url) {
+  location.href = url;
+}
+
 window.addEventListener("DOMContentLoaded", (_event) => {
   const style = document.createElement("style");
   style.innerHTML = `
